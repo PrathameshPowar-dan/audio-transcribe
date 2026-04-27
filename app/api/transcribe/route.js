@@ -25,7 +25,7 @@ export async function POST(request) {
         const arrayBuffer = await file.arrayBuffer();
         const base64Audio = Buffer.from(arrayBuffer).toString("base64");
 
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
         const prompt = "Please provide an accurate text transcript of this audio file. Output only the transcription text, nothing else.";
 
         const result = await model.generateContent([
@@ -49,6 +49,7 @@ export async function POST(request) {
 
         return NextResponse.json({ success: true, transcript: savedTranscript });
     } catch (error) {
+        console.log(error)
         return NextResponse.json({ error: "Transcription failed" }, { status: 500 });
     }
 }

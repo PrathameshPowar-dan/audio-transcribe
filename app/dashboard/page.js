@@ -79,7 +79,7 @@ export default function Dashboard() {
             </div>
 
             <div style={{ marginBottom: "40px", padding: "20px", border: "1px solid #ddd" }}>
-                <h3>Upload Audio (< 1 min)</h3>
+                <h3>Upload Audio (&lt; 1 min)</h3>
                 {error && <p style={{ color: "red" }}>{error}</p>}
                 <form onSubmit={handleUpload} style={{ display: "flex", gap: "10px", marginTop: "10px" }}>
                     <input
